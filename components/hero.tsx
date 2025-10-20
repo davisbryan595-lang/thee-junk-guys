@@ -15,18 +15,8 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col lg:flex-row items-center gap-12">
-        {/* Left: Logo and Text */}
+        {/* Left: Text */}
         <div className="flex-1 animate-slide-in-left">
-          <div className="mb-8">
-            <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/thee-fYDHq4JEJLm2JDC4rcgPJBpMgeiMKH.jpg"
-              alt="TheeJunkGuys Logo"
-              width={300}
-              height={300}
-              className="w-64 h-64 object-contain drop-shadow-2xl"
-            />
-          </div>
-
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-4 text-balance leading-tight">
             Haul It. <span className="text-accent animate-neon-glow">Demo It.</span> Light It Up.
           </h1>
