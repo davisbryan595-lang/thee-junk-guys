@@ -42,7 +42,7 @@ export function Navbar() {
             ))}
             <a
               href="tel:704-470-5889"
-              className="px-6 py-2 bg-accent text-black font-bold rounded-lg hover:shadow-[0_0_20px_rgba(0,255,0,0.4)] transition-all duration-300"
+              className="px-6 py-2 bg-accent text-black font-bold rounded-lg hover:glow-accent-md transition-all duration-300"
             >
               Call Now
             </a>
@@ -73,7 +73,7 @@ export function Navbar() {
             ))}
             <a
               href="tel:704-470-5889"
-              className="block px-4 py-2 bg-accent text-black font-bold rounded-lg text-center hover:shadow-[0_0_20px_rgba(0,255,0,0.4)] transition-all duration-300"
+              className="block px-4 py-2 bg-accent text-black font-bold rounded-lg text-center hover:glow-accent-md transition-all duration-300"
             >
               Call Now
             </a>
