@@ -61,7 +61,7 @@ export function AboutServices() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-transparent rounded-2xl blur-3xl" />
               <img
-                src="/placeholder.svg?key=0jpp2"
+                src="https://images.pexels.com/photos/8961068/pexels-photo-8961068.jpeg"
                 alt="TheeJunkGuys team"
                 className="relative rounded-2xl shadow-2xl w-full"
               />
@@ -88,7 +88,10 @@ export function AboutServices() {
               return (
                 <div
                   key={index}
-                  className="group relative bg-slate-900/50 border border-gray-700 rounded-xl p-8 hover:border-accent transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,0,0.2)]"
+                  className="group relative bg-slate-900/50 border border-gray-700 rounded-xl p-8 hover:border-accent transition-all duration-300"
+                  style={{
+                    '--glow-color': 'hsl(142.5, 100%, 50%, 0.2)'
+                  } as React.CSSProperties}
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 

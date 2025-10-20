@@ -90,7 +90,7 @@ export function Testimonials() {
           <div className="flex items-center justify-between mt-8">
             <button
               onClick={prevTestimonial}
-              className="p-3 bg-slate-900 hover:bg-accent hover:text-black text-accent rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,0,0.4)]"
+              className="p-3 bg-slate-900 hover:bg-accent hover:text-black text-accent rounded-lg transition-all duration-300 hover:glow-accent-md"
               aria-label="Previous testimonial"
             >
               <ChevronLeft size={24} />
@@ -103,7 +103,7 @@ export function Testimonials() {
                   onClick={() => setActiveTestimonial(index)}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     index === activeTestimonial
-                      ? "bg-accent w-8 shadow-[0_0_10px_rgba(0,255,0,0.6)]"
+                      ? "bg-accent w-8 glow-accent-sm"
                       : "bg-gray-600 w-2 hover:bg-gray-500"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
@@ -113,7 +113,7 @@ export function Testimonials() {
 
             <button
               onClick={nextTestimonial}
-              className="p-3 bg-slate-900 hover:bg-accent hover:text-black text-accent rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,0,0.4)]"
+              className="p-3 bg-slate-900 hover:bg-accent hover:text-black text-accent rounded-lg transition-all duration-300 hover:glow-accent-md"
               aria-label="Next testimonial"
             >
               <ChevronRight size={24} />

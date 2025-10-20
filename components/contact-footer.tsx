@@ -134,7 +134,7 @@ export function ContactFooter() {
 
                 <button
                   type="submit"
-                  className="w-full bg-accent text-black font-bold py-3 rounded-lg hover:shadow-[0_0_30px_rgba(0,255,0,0.6)] transition-all duration-300 flex items-center justify-center gap-2 group"
+                  className="w-full bg-accent text-black font-bold py-3 rounded-lg hover:glow-accent-lg transition-all duration-300 flex items-center justify-center gap-2 group"
                 >
                   <Send size={20} className="group-hover:translate-x-1 transition-transform" />
                   Book Your Cleanup Now
@@ -198,21 +198,21 @@ export function ContactFooter() {
                 <div className="flex gap-4">
                   <a
                     href="#"
-                    className="w-12 h-12 bg-slate-900 border border-gray-700 rounded-lg flex items-center justify-center text-accent hover:bg-accent hover:text-black transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,255,0,0.4)]"
+                    className="w-12 h-12 bg-slate-900 border border-gray-700 rounded-lg flex items-center justify-center text-accent hover:bg-accent hover:text-black transition-all duration-300 hover:shadow-[0_0_15px_hsl(142.5_100%_50%_/_0.4)]"
                     aria-label="Facebook"
                   >
                     <Facebook size={20} />
                   </a>
                   <a
                     href="#"
-                    className="w-12 h-12 bg-slate-900 border border-gray-700 rounded-lg flex items-center justify-center text-accent hover:bg-accent hover:text-black transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,255,0,0.4)]"
+                    className="w-12 h-12 bg-slate-900 border border-gray-700 rounded-lg flex items-center justify-center text-accent hover:bg-accent hover:text-black transition-all duration-300 hover:shadow-[0_0_15px_hsl(142.5_100%_50%_/_0.4)]"
                     aria-label="Instagram"
                   >
                     <Instagram size={20} />
                   </a>
                   <a
                     href="#"
-                    className="w-12 h-12 bg-slate-900 border border-gray-700 rounded-lg flex items-center justify-center text-accent hover:bg-accent hover:text-black transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,255,0,0.4)]"
+                    className="w-12 h-12 bg-slate-900 border border-gray-700 rounded-lg flex items-center justify-center text-accent hover:bg-accent hover:text-black transition-all duration-300 hover:shadow-[0_0_15px_hsl(142.5_100%_50%_/_0.4)]"
                     aria-label="Twitter"
                   >
                     <Twitter size={20} />

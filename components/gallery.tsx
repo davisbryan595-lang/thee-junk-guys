@@ -13,23 +13,23 @@ export function Gallery() {
   const beforeAfterPairs = [
     {
       title: "Residential Junk Removal",
-      before: "/placeholder.svg?key=0jpp3",
-      after: "/placeholder.svg?key=0jpp4",
+      before: "https://images.pexels.com/photos/6952447/pexels-photo-6952447.jpeg",
+      after: "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg",
     },
     {
       title: "Commercial Cleanup",
-      before: "/placeholder.svg?key=0jpp5",
-      after: "/placeholder.svg?key=0jpp6",
+      before: "https://images.pexels.com/photos/28041688/pexels-photo-28041688.jpeg",
+      after: "https://images.pexels.com/photos/6196238/pexels-photo-6196238.jpeg",
     },
     {
       title: "Christmas Light Installation",
-      before: "/placeholder.svg?key=0jpp7",
-      after: "/placeholder.svg?key=0jpp8",
+      before: "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg",
+      after: "https://images.pexels.com/photos/29675606/pexels-photo-29675606.jpeg",
     },
     {
       title: "Light Demolition Project",
-      before: "/placeholder.svg?key=0jpp9",
-      after: "/placeholder.svg?key=0jpp10",
+      before: "https://images.pexels.com/photos/28041688/pexels-photo-28041688.jpeg",
+      after: "https://images.pexels.com/photos/2489/street-building-construction-industry.jpg",
     },
   ]
 
@@ -68,7 +68,7 @@ export function Gallery() {
           >
             {/* After Image */}
             <Image
-              src={beforeAfterPairs[activeSlide].after || "/placeholder.svg"}
+              src={beforeAfterPairs[activeSlide].after || "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg"}
               alt="After"
               fill
               className="object-cover"
@@ -77,7 +77,7 @@ export function Gallery() {
             {/* Before Image */}
             <div className="absolute inset-0 overflow-hidden" style={{ width: `${sliderPosition}%` }}>
               <Image
-                src={beforeAfterPairs[activeSlide].before || "/placeholder.svg"}
+                src={beforeAfterPairs[activeSlide].before || "https://images.pexels.com/photos/28041688/pexels-photo-28041688.jpeg"}
                 alt="Before"
                 fill
                 className="object-cover"
@@ -89,7 +89,7 @@ export function Gallery() {
               className="absolute top-0 bottom-0 w-1 bg-accent transition-all duration-100"
               style={{ left: `${sliderPosition}%` }}
             >
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg group-hover:shadow-[0_0_20px_rgba(0,255,0,0.6)]">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg group-hover:glow-accent-sm">
                 <div className="flex gap-1">
                   <ChevronLeft size={20} className="text-black" />
                   <ChevronRight size={20} className="text-black" />
@@ -115,7 +115,7 @@ export function Gallery() {
           <div className="flex items-center justify-between mt-8">
             <button
               onClick={prevSlide}
-              className="p-3 bg-slate-900 hover:bg-accent hover:text-black text-accent rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,0,0.4)]"
+              className="p-3 bg-slate-900 hover:bg-accent hover:text-black text-accent rounded-lg transition-all duration-300 hover:glow-accent-md"
               aria-label="Previous project"
             >
               <ChevronLeft size={24} />
@@ -131,7 +131,7 @@ export function Gallery() {
                   }}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     index === activeSlide
-                      ? "bg-accent w-8 shadow-[0_0_10px_rgba(0,255,0,0.6)]"
+                      ? "bg-accent w-8 glow-accent-sm"
                       : "bg-gray-600 w-2 hover:bg-gray-500"
                   }`}
                   aria-label={`Go to project ${index + 1}`}
@@ -141,7 +141,7 @@ export function Gallery() {
 
             <button
               onClick={nextSlide}
-              className="p-3 bg-slate-900 hover:bg-accent hover:text-black text-accent rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,0,0.4)]"
+              className="p-3 bg-slate-900 hover:bg-accent hover:text-black text-accent rounded-lg transition-all duration-300 hover:glow-accent-md"
               aria-label="Next project"
             >
               <ChevronRight size={24} />
@@ -151,10 +151,19 @@ export function Gallery() {
 
         {/* Gallery Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[...Array(8)].map((_, i) => (
+          {[
+            "https://images.pexels.com/photos/6169650/pexels-photo-6169650.jpeg",
+            "https://images.pexels.com/photos/6952447/pexels-photo-6952447.jpeg",
+            "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg",
+            "https://images.pexels.com/photos/28041688/pexels-photo-28041688.jpeg",
+            "https://images.pexels.com/photos/8961068/pexels-photo-8961068.jpeg",
+            "https://images.pexels.com/photos/29675606/pexels-photo-29675606.jpeg",
+            "https://images.pexels.com/photos/2489/street-building-construction-industry.jpg",
+            "https://images.pexels.com/photos/6196238/pexels-photo-6196238.jpeg",
+          ].map((src, i) => (
             <div key={i} className="group relative aspect-square rounded-lg overflow-hidden cursor-pointer">
               <Image
-                src={`/ceholder-svg-key-0jpp.jpg?key=0jpp${11 + i}`}
+                src={src}
                 alt={`Gallery image ${i + 1}`}
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-300"

@@ -10,23 +10,13 @@ export function Hero() {
   return (
     <section className="relative min-h-screen bg-gradient-to-b from-black via-slate-900 to-black overflow-hidden flex items-center justify-center">
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,255,0,0.1)_1px,transparent_1px),linear-gradient(rgba(0,255,0,0.1)_1px,transparent_1px)] bg-[size:50px_50px]" />
+        <div className="absolute inset-0 grid-accent" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col lg:flex-row items-center gap-12">
-        {/* Left: Logo and Text */}
+        {/* Left: Text */}
         <div className="flex-1 animate-slide-in-left">
-          <div className="mb-8">
-            <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/thee-fYDHq4JEJLm2JDC4rcgPJBpMgeiMKH.jpg"
-              alt="TheeJunkGuys Logo"
-              width={300}
-              height={300}
-              className="w-64 h-64 object-contain drop-shadow-2xl"
-            />
-          </div>
-
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-4 text-balance leading-tight">
             Haul It. <span className="text-accent animate-neon-glow">Demo It.</span> Light It Up.
           </h1>
@@ -40,7 +30,7 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="tel:704-470-5889"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-black font-bold rounded-lg hover:shadow-[0_0_30px_rgba(0,255,0,0.6)] transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-black font-bold rounded-lg hover:glow-accent-lg transition-all duration-300 transform hover:scale-105"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
             >
@@ -79,7 +69,7 @@ export function Hero() {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-transparent rounded-2xl blur-3xl" />
             <Image
-              src="/junk-removal-truck-workers-loading-debris-professi.jpg"
+              src="https://images.pexels.com/photos/6169650/pexels-photo-6169650.jpeg"
               alt="Junk removal in action"
               width={500}
               height={500}
@@ -93,7 +83,7 @@ export function Hero() {
       <div className="fixed bottom-6 right-6 z-50 lg:hidden">
         <a
           href="tel:704-470-5889"
-          className="flex items-center justify-center w-16 h-16 bg-accent text-black rounded-full shadow-lg hover:shadow-[0_0_30px_rgba(0,255,0,0.6)] transition-all duration-300 font-bold text-sm"
+          className="flex items-center justify-center w-16 h-16 bg-accent text-black rounded-full shadow-lg hover:glow-accent-lg transition-all duration-300 font-bold text-sm"
         >
           <Phone size={24} />
         </a>
