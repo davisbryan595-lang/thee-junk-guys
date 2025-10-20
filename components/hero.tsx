@@ -69,7 +69,7 @@ export function Hero() {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-transparent rounded-2xl blur-3xl" />
             <Image
-              src="/junk-removal-truck-workers-loading-debris-professi.jpg"
+              src="https://images.pexels.com/photos/6169650/pexels-photo-6169650.jpeg"
               alt="Junk removal in action"
               width={500}
               height={500}

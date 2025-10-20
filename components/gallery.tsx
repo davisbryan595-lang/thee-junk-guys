@@ -13,23 +13,23 @@ export function Gallery() {
   const beforeAfterPairs = [
     {
       title: "Residential Junk Removal",
-      before: "/placeholder.svg?key=0jpp3",
-      after: "/placeholder.svg?key=0jpp4",
+      before: "https://images.pexels.com/photos/6952447/pexels-photo-6952447.jpeg",
+      after: "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg",
     },
     {
       title: "Commercial Cleanup",
-      before: "/placeholder.svg?key=0jpp5",
-      after: "/placeholder.svg?key=0jpp6",
+      before: "https://images.pexels.com/photos/28041688/pexels-photo-28041688.jpeg",
+      after: "https://images.pexels.com/photos/6196238/pexels-photo-6196238.jpeg",
     },
     {
       title: "Christmas Light Installation",
-      before: "/placeholder.svg?key=0jpp7",
-      after: "/placeholder.svg?key=0jpp8",
+      before: "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg",
+      after: "https://images.pexels.com/photos/29675606/pexels-photo-29675606.jpeg",
     },
     {
       title: "Light Demolition Project",
-      before: "/placeholder.svg?key=0jpp9",
-      after: "/placeholder.svg?key=0jpp10",
+      before: "https://images.pexels.com/photos/28041688/pexels-photo-28041688.jpeg",
+      after: "https://images.pexels.com/photos/2489/street-building-construction-industry.jpg",
     },
   ]
 
@@ -151,10 +151,19 @@ export function Gallery() {
 
         {/* Gallery Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[...Array(8)].map((_, i) => (
+          {[
+            "https://images.pexels.com/photos/6169650/pexels-photo-6169650.jpeg",
+            "https://images.pexels.com/photos/6952447/pexels-photo-6952447.jpeg",
+            "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg",
+            "https://images.pexels.com/photos/28041688/pexels-photo-28041688.jpeg",
+            "https://images.pexels.com/photos/8961068/pexels-photo-8961068.jpeg",
+            "https://images.pexels.com/photos/29675606/pexels-photo-29675606.jpeg",
+            "https://images.pexels.com/photos/2489/street-building-construction-industry.jpg",
+            "https://images.pexels.com/photos/6196238/pexels-photo-6196238.jpeg",
+          ].map((src, i) => (
             <div key={i} className="group relative aspect-square rounded-lg overflow-hidden cursor-pointer">
               <Image
-                src={`/ceholder-svg-key-0jpp.jpg?key=0jpp${11 + i}`}
+                src={src}
                 alt={`Gallery image ${i + 1}`}
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-300"

@@ -61,7 +61,7 @@ export function AboutServices() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-transparent rounded-2xl blur-3xl" />
               <img
-                src="/placeholder.svg?key=0jpp2"
+                src="https://images.pexels.com/photos/8961068/pexels-photo-8961068.jpeg"
                 alt="TheeJunkGuys team"
                 className="relative rounded-2xl shadow-2xl w-full"
               />
