@@ -89,7 +89,7 @@ export function Gallery() {
               className="absolute top-0 bottom-0 w-1 bg-accent transition-all duration-100"
               style={{ left: `${sliderPosition}%` }}
             >
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg group-hover:shadow-[0_0_20px_rgba(0,255,0,0.6)]">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg group-hover:glow-accent-sm">
                 <div className="flex gap-1">
                   <ChevronLeft size={20} className="text-black" />
                   <ChevronRight size={20} className="text-black" />
@@ -115,7 +115,7 @@ export function Gallery() {
           <div className="flex items-center justify-between mt-8">
             <button
               onClick={prevSlide}
-              className="p-3 bg-slate-900 hover:bg-accent hover:text-black text-accent rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,0,0.4)]"
+              className="p-3 bg-slate-900 hover:bg-accent hover:text-black text-accent rounded-lg transition-all duration-300 hover:glow-accent-md"
               aria-label="Previous project"
             >
               <ChevronLeft size={24} />
@@ -131,7 +131,7 @@ export function Gallery() {
                   }}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     index === activeSlide
-                      ? "bg-accent w-8 shadow-[0_0_10px_rgba(0,255,0,0.6)]"
+                      ? "bg-accent w-8 glow-accent-sm"
                       : "bg-gray-600 w-2 hover:bg-gray-500"
                   }`}
                   aria-label={`Go to project ${index + 1}`}
@@ -141,7 +141,7 @@ export function Gallery() {
 
             <button
               onClick={nextSlide}
-              className="p-3 bg-slate-900 hover:bg-accent hover:text-black text-accent rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,0,0.4)]"
+              className="p-3 bg-slate-900 hover:bg-accent hover:text-black text-accent rounded-lg transition-all duration-300 hover:glow-accent-md"
               aria-label="Next project"
             >
               <ChevronRight size={24} />
