@@ -172,15 +172,15 @@
 
 /* Accent glow effects */
 .glow-accent-sm {
-  box-shadow: 0 0 10px hsl(142.5, 100%, 50%, 0.6);
+  box-shadow: 0 0 10px hsl(142.5 100% 50% / 0.6);
 }
 
 .glow-accent-md {
-  box-shadow: 0 0 20px hsl(142.5, 100%, 50%, 0.4);
+  box-shadow: 0 0 20px hsl(142.5 100% 50% / 0.4);
 }
 
 .glow-accent-lg {
-  box-shadow: 0 0 30px hsl(142.5, 100%, 50%, 0.6);
+  box-shadow: 0 0 30px hsl(142.5 100% 50% / 0.6);
 }
 
 /* Grid background with accent color */
