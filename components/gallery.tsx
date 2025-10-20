@@ -68,7 +68,7 @@ export function Gallery() {
           >
             {/* After Image */}
             <Image
-              src={beforeAfterPairs[activeSlide].after || "/placeholder.svg"}
+              src={beforeAfterPairs[activeSlide].after || "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg"}
               alt="After"
               fill
               className="object-cover"
@@ -77,7 +77,7 @@ export function Gallery() {
             {/* Before Image */}
             <div className="absolute inset-0 overflow-hidden" style={{ width: `${sliderPosition}%` }}>
               <Image
-                src={beforeAfterPairs[activeSlide].before || "/placeholder.svg"}
+                src={beforeAfterPairs[activeSlide].before || "https://images.pexels.com/photos/28041688/pexels-photo-28041688.jpeg"}
                 alt="Before"
                 fill
                 className="object-cover"
