@@ -172,19 +172,19 @@
 
 /* Accent glow effects */
 .glow-accent-sm {
-  box-shadow: 0 0 10px hsl(142.5 100% 50% / 0.6);
+  box-shadow: 0 0 10px rgba(15, 133, 75, 0.6);
 }
 
 .glow-accent-md {
-  box-shadow: 0 0 20px hsl(142.5 100% 50% / 0.4);
+  box-shadow: 0 0 20px rgba(15, 133, 75, 0.4);
 }
 
 .glow-accent-lg {
-  box-shadow: 0 0 30px hsl(142.5 100% 50% / 0.6);
+  box-shadow: 0 0 30px rgba(15, 133, 75, 0.6);
 }
 
 /* Grid background with accent color */
 .grid-accent {
-  background-image: linear-gradient(90deg, hsl(142.5, 100%, 50%, 0.1) 1px, transparent 1px), linear-gradient(hsl(142.5, 100%, 50%, 0.1) 1px, transparent 1px);
+  background-image: linear-gradient(90deg, rgba(15, 133, 75, 0.1) 1px, transparent 1px), linear-gradient(rgba(15, 133, 75, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
 }
