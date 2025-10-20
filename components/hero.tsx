@@ -30,7 +30,7 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="tel:704-470-5889"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-black font-bold rounded-lg hover:shadow-[0_0_30px_rgba(0,255,0,0.6)] transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-black font-bold rounded-lg hover:glow-accent-lg transition-all duration-300 transform hover:scale-105"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
             >
@@ -83,7 +83,7 @@ export function Hero() {
       <div className="fixed bottom-6 right-6 z-50 lg:hidden">
         <a
           href="tel:704-470-5889"
-          className="flex items-center justify-center w-16 h-16 bg-accent text-black rounded-full shadow-lg hover:shadow-[0_0_30px_rgba(0,255,0,0.6)] transition-all duration-300 font-bold text-sm"
+          className="flex items-center justify-center w-16 h-16 bg-accent text-black rounded-full shadow-lg hover:glow-accent-lg transition-all duration-300 font-bold text-sm"
         >
           <Phone size={24} />
         </a>
