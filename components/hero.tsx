@@ -10,7 +10,7 @@ export function Hero() {
   return (
     <section className="relative min-h-screen bg-gradient-to-b from-black via-slate-900 to-black overflow-hidden flex items-center justify-center">
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,255,0,0.1)_1px,transparent_1px),linear-gradient(rgba(0,255,0,0.1)_1px,transparent_1px)] bg-[size:50px_50px]" />
+        <div className="absolute inset-0 grid-accent" />
       </div>
 
       {/* Content */}
