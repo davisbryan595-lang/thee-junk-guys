@@ -9,18 +9,21 @@ export function AboutServices() {
       title: "Junk Removal",
       description:
         "Fast, efficient removal of household and commercial junk. We handle everything from furniture to appliances.",
+      href: "/services/junk-removal",
     },
     {
       icon: Hammer,
       title: "Light Demolition",
       description:
         "Professional demolition services for small to medium projects. Safe, clean, and compliant with all regulations.",
+      href: "/services/light-demolition",
     },
     {
       icon: Lightbulb,
       title: "Christmas Light Installation",
       description:
         "Professional holiday lighting installation to make your property shine. Design, installation, and takedown included.",
+      href: "/services/christmas-light-installation",
     },
   ]
 
@@ -71,7 +74,7 @@ export function AboutServices() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-slate-900">
+      <section id="services" className="py-20 bg-gradient-to-b from-black to-slate-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 text-balance">
@@ -108,7 +111,7 @@ export function AboutServices() {
 
                     <div className="mt-6 pt-6 border-t border-gray-700 group-hover:border-accent/50 transition-colors duration-300">
                       <a
-                        href="#contact"
+                        href={service.href}
                         className="inline-flex items-center text-accent font-semibold hover:gap-2 transition-all duration-300"
                       >
                         Learn More →
