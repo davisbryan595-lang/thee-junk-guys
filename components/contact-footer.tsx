@@ -236,17 +236,17 @@ export function ContactFooter() {
               <h4 className="text-white font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>
-                  <a href="/services/junk-removal" className="hover:text-accent transition-colors">
+                  <a href="#services" className="hover:text-accent transition-colors">
                     Junk Removal
                   </a>
                 </li>
                 <li>
-                  <a href="/services/light-demolition" className="hover:text-accent transition-colors">
+                  <a href="#services" className="hover:text-accent transition-colors">
                     Light Demolition
                   </a>
                 </li>
                 <li>
-                  <a href="/services/christmas-light-installation" className="hover:text-accent transition-colors">
+                  <a href="#services" className="hover:text-accent transition-colors">
                     Christmas Lights
                   </a>
                 </li>
