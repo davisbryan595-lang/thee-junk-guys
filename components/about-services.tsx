@@ -1,28 +1,58 @@
 "use client"
 
-import { Truck, Hammer, Lightbulb } from "lucide-react"
+import type React from "react"
+import { useState } from "react"
+import { Truck, Hammer, Lightbulb, CheckCircle } from "lucide-react"
 
 export function AboutServices() {
+  const [expanded, setExpanded] = useState<number | null>(null)
   const services = [
     {
       icon: Truck,
       title: "Junk Removal",
       description:
         "Fast, efficient removal of household and commercial junk. We handle everything from furniture to appliances.",
+      href: "/services/junk-removal",
     },
     {
       icon: Hammer,
       title: "Light Demolition",
       description:
         "Professional demolition services for small to medium projects. Safe, clean, and compliant with all regulations.",
+      href: "/services/light-demolition",
     },
     {
       icon: Lightbulb,
       title: "Christmas Light Installation",
       description:
         "Professional holiday lighting installation to make your property shine. Design, installation, and takedown included.",
+      href: "/services/christmas-light-installation",
     },
   ]
+
+  const detailsByTitle: Record<string, string[]> = {
+    "Junk Removal": [
+      "Same-day and next-day pickups",
+      "Residential and commercial cleanouts",
+      "Eco-friendly disposal and donations",
+      "Heavy lifting and loading included",
+      "Transparent upfront pricing",
+    ],
+    "Light Demolition": [
+      "Site protection and dust control",
+      "Interior wall, cabinet, and fixture removal",
+      "Decks, sheds, and play-sets",
+      "Flooring and tile tear-out",
+      "Debris hauling and clean-up",
+    ],
+    "Christmas Light Installation": [
+      "Custom design and layout",
+      "Commercial-grade LED lights",
+      "Professional installation",
+      "Seasonal maintenance",
+      "Takedown and storage options",
+    ],
+  }
 
   return (
     <>
@@ -71,7 +101,7 @@ export function AboutServices() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-slate-900">
+      <section id="services" className="py-20 bg-gradient-to-b from-black to-slate-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 text-balance">
@@ -107,12 +137,31 @@ export function AboutServices() {
                     <p className="text-gray-300 leading-relaxed">{service.description}</p>
 
                     <div className="mt-6 pt-6 border-t border-gray-700 group-hover:border-accent/50 transition-colors duration-300">
-                      <a
-                        href="#contact"
+                      <button
+                        type="button"
+                        onClick={() => setExpanded(expanded === index ? null : index)}
+                        aria-expanded={expanded === index}
                         className="inline-flex items-center text-accent font-semibold hover:gap-2 transition-all duration-300"
                       >
-                        Learn More →
-                      </a>
+                        {expanded === index ? "Hide Details ←" : "Learn More →"}
+                      </button>
+                      {expanded === index && (
+                        <div className="mt-6">
+                          <ul className="grid sm:grid-cols-2 gap-3">
+                            {detailsByTitle[service.title].map((item) => (
+                              <li key={item} className="flex items-center gap-2 text-gray-300">
+                                <CheckCircle className="w-4 h-4 text-accent" />
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                          <div className="mt-6">
+                            <a href="#contact" className="inline-flex items-center px-4 py-2 bg-accent text-black font-bold rounded-lg hover:glow-accent-md transition-all duration-300">
+                              Get a Free Quote
+                            </a>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
