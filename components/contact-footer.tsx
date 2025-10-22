@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Send } from "lucide-react"
 
@@ -14,21 +13,41 @@ export function ContactFooter() {
     message: "",
   })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically send the form data to a server
-    console.log("Form submitted:", formData)
-    setSubmitted(true)
-    setTimeout(() => {
-      setFormData({ name: "", phone: "", email: "", service: "junk-removal", message: "" })
-      setSubmitted(false)
-    }, 3000)
+    setLoading(true)
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/theejunkguys@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          _subject: "New Inquiry from The Linkage Digital Website",
+          _template: "table",
+        }),
+      })
+
+      if (response.ok) {
+        setSubmitted(true)
+        setFormData({ name: "", phone: "", email: "", service: "junk-removal", message: "" })
+        setTimeout(() => setSubmitted(false), 4000)
+      } else {
+        alert("Submission failed. Please try again later.")
+      }
+    } catch (error) {
+      console.error("FormSubmit Error:", error)
+      alert("An error occurred. Please try again later.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -134,15 +153,20 @@ export function ContactFooter() {
 
                 <button
                   type="submit"
-                  className="w-full bg-accent text-black font-bold py-3 rounded-lg hover:glow-accent-lg transition-all duration-300 flex items-center justify-center gap-2 group"
+                  disabled={loading}
+                  className={`w-full ${
+                    loading ? "bg-gray-600" : "bg-accent hover:glow-accent-lg"
+                  } text-black font-bold py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group`}
                 >
-                  <Send size={20} className="group-hover:translate-x-1 transition-transform" />
-                  Book Your Cleanup Now
+                  {loading ? "Sending..." : <>
+                    <Send size={20} className="group-hover:translate-x-1 transition-transform" />
+                    Book Your Cleanup Now
+                  </>}
                 </button>
 
                 {submitted && (
                   <div className="bg-accent/20 border border-accent rounded-lg p-4 text-accent text-center font-semibold">
-                    Thank you! We'll be in touch within 24 hours.
+                    ✅ Thank you! We'll be in touch within 24 hours.
                   </div>
                 )}
               </form>
@@ -196,25 +220,13 @@ export function ContactFooter() {
               <div className="pt-8 border-t border-gray-700">
                 <p className="text-white font-semibold mb-4">Follow Us</p>
                 <div className="flex gap-4">
-                  <a
-                    href="#"
-                    className="w-12 h-12 bg-slate-900 border border-gray-700 rounded-lg flex items-center justify-center text-accent hover:bg-accent hover:text-black transition-all duration-300 hover:shadow-[0_0_15px_hsl(142.5_100%_50%_/_0.4)]"
-                    aria-label="Facebook"
-                  >
+                  <a href="#" className="w-12 h-12 bg-slate-900 border border-gray-700 rounded-lg flex items-center justify-center text-accent hover:bg-accent hover:text-black transition-all duration-300 hover:shadow-[0_0_15px_hsl(142.5_100%_50%_/_0.4)]" aria-label="Facebook">
                     <Facebook size={20} />
                   </a>
-                  <a
-                    href="#"
-                    className="w-12 h-12 bg-slate-900 border border-gray-700 rounded-lg flex items-center justify-center text-accent hover:bg-accent hover:text-black transition-all duration-300 hover:shadow-[0_0_15px_hsl(142.5_100%_50%_/_0.4)]"
-                    aria-label="Instagram"
-                  >
+                  <a href="#" className="w-12 h-12 bg-slate-900 border border-gray-700 rounded-lg flex items-center justify-center text-accent hover:bg-accent hover:text-black transition-all duration-300 hover:shadow-[0_0_15px_hsl(142.5_100%_50%_/_0.4)]" aria-label="Instagram">
                     <Instagram size={20} />
                   </a>
-                  <a
-                    href="#"
-                    className="w-12 h-12 bg-slate-900 border border-gray-700 rounded-lg flex items-center justify-center text-accent hover:bg-accent hover:text-black transition-all duration-300 hover:shadow-[0_0_15px_hsl(142.5_100%_50%_/_0.4)]"
-                    aria-label="Twitter"
-                  >
+                  <a href="#" className="w-12 h-12 bg-slate-900 border border-gray-700 rounded-lg flex items-center justify-center text-accent hover:bg-accent hover:text-black transition-all duration-300 hover:shadow-[0_0_15px_hsl(142.5_100%_50%_/_0.4)]" aria-label="Twitter">
                     <Twitter size={20} />
                   </a>
                 </div>
@@ -235,56 +247,24 @@ export function ContactFooter() {
             <div>
               <h4 className="text-white font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li>
-                  <a href="#services" className="hover:text-accent transition-colors">
-                    Junk Removal
-                  </a>
-                </li>
-                <li>
-                  <a href="#services" className="hover:text-accent transition-colors">
-                    Light Demolition
-                  </a>
-                </li>
-                <li>
-                  <a href="#services" className="hover:text-accent transition-colors">
-                    Christmas Lights
-                  </a>
-                </li>
+                <li><a href="#services" className="hover:text-accent transition-colors">Junk Removal</a></li>
+                <li><a href="#services" className="hover:text-accent transition-colors">Light Demolition</a></li>
+                <li><a href="#services" className="hover:text-accent transition-colors">Christmas Lights</a></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li>
-                  <a href="#" className="hover:text-accent transition-colors">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-accent transition-colors">
-                    Gallery
-                  </a>
-                </li>
-                <li>
-                  <a href="#contact" className="hover:text-accent transition-colors">
-                    Contact
-                  </a>
-                </li>
+                <li><a href="#" className="hover:text-accent transition-colors">About Us</a></li>
+                <li><a href="#" className="hover:text-accent transition-colors">Gallery</a></li>
+                <li><a href="#contact" className="hover:text-accent transition-colors">Contact</a></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li>
-                  <a href="tel:704-470-5889" className="hover:text-accent transition-colors">
-                    704-470-5889
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:theejunkguys@gmail.com" className="hover:text-accent transition-colors">
-                    theejunkguys@gmail.com
-                  </a>
-                </li>
+                <li><a href="tel:704-470-5889" className="hover:text-accent transition-colors">704-470-5889</a></li>
+                <li><a href="mailto:theejunkguys@gmail.com" className="hover:text-accent transition-colors">theejunkguys@gmail.com</a></li>
               </ul>
             </div>
           </div>
@@ -294,12 +274,8 @@ export function ContactFooter() {
               &copy; 2025 TheeJunkGuys. All rights reserved. | Owned by Conner Coy
             </p>
             <div className="flex gap-4 mt-4 sm:mt-0">
-              <a href="#" className="text-gray-400 hover:text-accent text-sm transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-accent text-sm transition-colors">
-                Terms of Service
-              </a>
+              <a href="#" className="text-gray-400 hover:text-accent text-sm transition-colors">Privacy Policy</a>
+              <a href="#" className="text-gray-400 hover:text-accent text-sm transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>
