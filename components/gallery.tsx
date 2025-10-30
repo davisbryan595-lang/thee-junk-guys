@@ -13,23 +13,23 @@ export function Gallery() {
   const beforeAfterPairs = [
     {
       title: "Residential Junk Removal",
-      before: "https://images.pexels.com/photos/6952447/pexels-photo-6952447.jpeg",
-      after: "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg",
+      before: "/hg1.jpg",
+      after: "/hg2.jpg",
     },
     {
       title: "Commercial Cleanup",
-      before: "https://images.pexels.com/photos/28041688/pexels-photo-28041688.jpeg",
-      after: "https://images.pexels.com/photos/6196238/pexels-photo-6196238.jpeg",
+      before: "/hg3.jpg",
+      after: "/hg4.jpg",
     },
     {
       title: "Christmas Light Installation",
-      before: "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg",
-      after: "https://images.pexels.com/photos/29675606/pexels-photo-29675606.jpeg",
+      before: "/hg5.jpg",
+      after: "/hg6.jpg",
     },
     {
       title: "Light Demolition Project",
-      before: "https://images.pexels.com/photos/28041688/pexels-photo-28041688.jpeg",
-      after: "https://images.pexels.com/photos/2489/street-building-construction-industry.jpg",
+      before: "/hg7.jpg",
+      after: "/hg8.jpg",
     },
   ]
 
@@ -68,7 +68,7 @@ export function Gallery() {
           >
             {/* After Image */}
             <Image
-              src={beforeAfterPairs[activeSlide].after || "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg"}
+              src={beforeAfterPairs[activeSlide].after}
               alt="After"
               fill
               className="object-cover"
@@ -77,7 +77,7 @@ export function Gallery() {
             {/* Before Image */}
             <div className="absolute inset-0 overflow-hidden" style={{ width: `${sliderPosition}%` }}>
               <Image
-                src={beforeAfterPairs[activeSlide].before || "https://images.pexels.com/photos/28041688/pexels-photo-28041688.jpeg"}
+                src={beforeAfterPairs[activeSlide].before}
                 alt="Before"
                 fill
                 className="object-cover"
@@ -152,14 +152,14 @@ export function Gallery() {
         {/* Gallery Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            "https://images.pexels.com/photos/6169650/pexels-photo-6169650.jpeg",
-            "https://images.pexels.com/photos/6952447/pexels-photo-6952447.jpeg",
-            "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg",
-            "https://images.pexels.com/photos/28041688/pexels-photo-28041688.jpeg",
-            "https://images.pexels.com/photos/8961068/pexels-photo-8961068.jpeg",
-            "https://images.pexels.com/photos/29675606/pexels-photo-29675606.jpeg",
-            "https://images.pexels.com/photos/2489/street-building-construction-industry.jpg",
-            "https://images.pexels.com/photos/6196238/pexels-photo-6196238.jpeg",
+            "/hg9.jpg",
+            "/hg10.jpg",
+            "/hg11.jpg",
+            "/hg12.jpg",
+            "/hg13.jpg",
+            "/hg14.jpg",
+            "/hg15.jpg",
+            "/hg16.jpg",
           ].map((src, i) => (
             <div key={i} className="group relative aspect-square rounded-lg overflow-hidden cursor-pointer">
               <Image
