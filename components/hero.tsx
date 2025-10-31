@@ -14,7 +14,7 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col lg:flex-row items-center gap-12">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col lg:flex-row items-center gap-8">
         {/* Left: Text */}
         <div className="flex-1 animate-slide-in-left">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-4 text-balance leading-tight">
@@ -65,15 +65,15 @@ export function Hero() {
         </div>
 
         {/* Right: Hero Image */}
-        <div className="flex-1 animate-float-up">
+        <div className="flex-1 max-w-sm mx-auto lg:mx-0">
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-transparent rounded-2xl blur-3xl" />
+            <div className="absolute inset-0 bg-gradient-to-r from-accent/10 to-transparent rounded-xl blur-xl opacity-50" />
             <Image
               src="/h1.jpg"
               alt="Junk removal in action"
-              width={500}
-              height={500}
-              className="relative rounded-2xl shadow-2xl"
+              width={400}
+              height={400}
+              className="relative rounded-xl shadow-lg w-full h-auto object-cover"
             />
           </div>
         </div>

@@ -59,7 +59,7 @@ export function AboutServices() {
       {/* About Section */}
       <section className="py-20 bg-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 text-balance">
                 About <span className="text-accent">TheeJunkGuys</span>
@@ -88,12 +88,12 @@ export function AboutServices() {
                 </div>
               </div>
             </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-transparent rounded-2xl blur-3xl" />
+            <div className="relative max-w-sm mx-auto lg:mx-0">
+              <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-transparent rounded-xl blur-xl opacity-50" />
               <img
                 src="/a2.jpg"
                 alt="TheeJunkGuys team"
-                className="relative rounded-2xl shadow-2xl w-full"
+                className="relative rounded-xl shadow-lg w-full h-auto object-cover"
               />
             </div>
           </div>
